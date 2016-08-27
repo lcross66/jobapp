@@ -1,0 +1,26 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import "font-awesome";
+
+body {
+  padding-top: 60px;
+  background-color: #81BEF7;
+}
+.navbar-inverse {
+    background-color: #08088A;
+    border-color: #090909;
+}
+.panel-default > .panel-heading {
+    color: #333333;
+    background-color: #A9D0F5;
+    border-color: #ddd;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}

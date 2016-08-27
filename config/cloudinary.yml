@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: ddi7rkhwg
+  api_key: '991251121533126'
+  api_secret: 4xcCCNfCPF_OgSS70HcW_jDkXuc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: ddi7rkhwg
+  api_key: '991251121533126'
+  api_secret: 4xcCCNfCPF_OgSS70HcW_jDkXuc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: ddi7rkhwg
+  api_key: '991251121533126'
+  api_secret: 4xcCCNfCPF_OgSS70HcW_jDkXuc
+  enhance_image_tag: true
+  static_image_support: false
