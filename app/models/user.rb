@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :company_profiles
-
+  has_many :user_skills
+  has_many :skills, through: :user_skills
+  
   rolify :role_cname => 'Roles'
 
   after_create :assign_role
@@ -13,7 +15,7 @@ class User < ApplicationRecord
           add_role :student
         end
       end
-    end      
+    end
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

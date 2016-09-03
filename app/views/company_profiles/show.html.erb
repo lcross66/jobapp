@@ -1,5 +1,37 @@
-<p id="notice"><%= notice %></p>
-
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">Company profile</h2>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <%= cl_image_tag @company_profile.logo, class: 'img-responsive', alt: @company_profile.company_name + ' logo' %>
+          </div>
+          <div class="col-md-6">
+              <h3><%= @company_profile.company_name %></h3>
+              <p class="lead"><%= @company_profile.company_type %></p>
+            </div>
+          </div>
+          <p><strong>Contact Name:</strong>
+            <%= @company_profile.contact_name %></p>
+          <p><strong>Address:</strong>
+            <%= @company_profile.formatted_address %></p>
+          <hr>
+          <p><strong>Company Info:</strong>
+            <%= @company_profile.description %></p>
+          <p><strong>Company Culture:</strong>
+            <%= @company_profile.company_culture %></p>
+          <% if @company_profile.user == current_user %>
+          <%= link_to 'Edit company profile', edit_company_profile_path(@company_profile), class: 'btn btn-warning btn-sm' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Back', company_profiles_path %>
+<!--
 <p>
   <strong>First name:</strong>
   <%= @company_profile.first_name %>
@@ -50,7 +82,7 @@
   <%= @company_profile.country %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Latitude:</strong>
   <%= @company_profile.latitude %>
 </p>
@@ -58,9 +90,9 @@
 <p>
   <strong>Longitude:</strong>
   <%= @company_profile.longitude %>
-</p>
+</p> -->
 
-<p>
+<!-- <p>
   <strong>Company culture:</strong>
   <%= @company_profile.company_culture %>
 </p>
@@ -68,12 +100,9 @@
 <p>
   <strong>Company type:</strong>
   <%= @company_profile.company_type %>
-</p>
+</p> -->
 
-<p>
-  <strong>User:</strong>
-  <%= @company_profile.user %>
-</p>
-
-<%= link_to 'Edit', edit_company_profile_path(@company_profile) %> |
-<%= link_to 'Back', company_profiles_path %>
+<!-- <p>
+  <!-- <strong>User:</strong> -->
+  <!-- <%= @company_profile.user %> -->
+<!-- </p> -->

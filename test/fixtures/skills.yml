@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  skill_catagory: one
+  name: MyString
+  description: MyText
+
+two:
+  skill_catagory: two
+  name: MyString
+  description: MyText

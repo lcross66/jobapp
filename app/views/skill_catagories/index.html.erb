@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Skill Catagories</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @skill_catagories.each do |skill_catagory| %>
+      <tr>
+        <td><%= skill_catagory.name %></td>
+        <td><%= skill_catagory.description %></td>
+        <td><%= link_to 'Show', skill_catagory %></td>
+        <td><%= link_to 'Edit', edit_skill_catagory_path(skill_catagory) %></td>
+        <td><%= link_to 'Destroy', skill_catagory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Skill Catagory', new_skill_catagory_path %>

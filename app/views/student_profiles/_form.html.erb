@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">New Student Form</h2>
+      </div>
+      <div class="panel-body">
+
+
+<%= simple_form_for(@student_profile) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name, placeholder: 'enter your first name' %>
+    <%= f.input :last_name, placeholder: 'enter your last name'  %>
+    <%= f.input :phone, placeholder: '(xx)xxx xxx xxx'  %>
+    <%= f.input :bio %>
+    <%= f.input :website %>
+    <%= f.input :github_username %>
+    <%= f.input :linkedin_url, label: 'LinkedIn username'%>
+    <%= f.input :photo %>
+    <%= f.input :cv, label: 'CV format: pdf, txt or md'%>
+    <%= f.input :city %>
+    <%= f.input :country, priority: ['Australia', 'United States'] %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
