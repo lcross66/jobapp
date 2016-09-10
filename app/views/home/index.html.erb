@@ -11,6 +11,21 @@
     <%= link_to 'Create your company profile', new_company_profile_path, class: 'btn btn-primary btn-sm' %>
   <% end %>
 </p>
+<% if current_user.has_role? :student %>
+  <div class="row">
+    <% @job_listings.each do |job| %>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4><%= job.title %>
+            <p><small><%= job.company_profile.company_name %></small></p></h4>
+            <p><%= job.job_description %></p>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>
+<% end %>
 <% else %>
 <%= link_to "<i class='fa fa-building'></i> List a job".html_safe, new_user_registration_path(user_type: 'company'), class: 'btn btn-primary btn-lg' %>
 

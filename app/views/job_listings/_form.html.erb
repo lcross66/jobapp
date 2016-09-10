@@ -5,7 +5,7 @@
     <% if params[:company_profile] %>
     <%= f.input :company_profile_id, input_html: { value:params[:company_profile]}, as: :hidden %>
     <% else %>
-    <%= f.association :company_profile %>
+    <%= f.association :company_profile, collection: current_user.company_profiles, label_method: :company_name %>
     <% end %>
     <%= f.input :title %>
 
