@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :job_listings
   resources :student_profiles
   resources :skills do
     member do
-      get :add_user_to
+      get :add_user_to, :remove_user_from
     end
   end
   resources :skill_catagories

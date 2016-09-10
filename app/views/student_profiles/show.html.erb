@@ -61,7 +61,11 @@
         <% @skill_catagories.each do |catagory| %>
           <p><strong><%= catagory.name %></strong></p>
           <% catagory.skills.each do |skill| %>
-            <%= link_to skill.name, add_user_to_skill_path(skill), class: 'btn btn-primary btn-sm' %>
+            <% if skill.users.include?(current_user) %>
+            <%= link_to skill.name, remove_user_from_skill_path(skill), class: 'btn btn-success btn-sm' %>
+            <% else %>
+              <%= link_to skill.name, add_user_to_skill_path(skill), class: 'btn btn-primary btn-sm' %>
+            <% end %>
           <% end %>
           <hr>
         <% end %>

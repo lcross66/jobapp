@@ -13,11 +13,9 @@
       <th>Github username</th>
       <th>Linkedin url</th>
       <th>Photo</th>
-      <th>Photo</th>
       <th>Cv</th>
       <th>City</th>
       <th>Country</th>
-      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -33,11 +31,9 @@
         <td><%= student_profile.github_username %></td>
         <td><%= student_profile.linkedin_url %></td>
         <td><%= student_profile.photo %></td>
-        <td><%= student_profile.photo %></td>
         <td><%= student_profile.cv %></td>
         <td><%= student_profile.city %></td>
         <td><%= student_profile.country %></td>
-        <td><%= student_profile.user %></td>
         <td><%= link_to 'Show', student_profile %></td>
         <td><%= link_to 'Edit', edit_student_profile_path(student_profile) %></td>
         <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -24,7 +24,8 @@
           <p><strong>Company Culture:</strong>
             <%= @company_profile.company_culture %></p>
           <% if @company_profile.user == current_user %>
-          <%= link_to 'Edit company profile', edit_company_profile_path(@company_profile), class: 'btn btn-warning btn-sm' %>
+            <%= link_to 'Edit company profile', edit_company_profile_path(@company_profile), class: 'btn btn-warning btn-sm' %>
+            <%= link_to 'Add job listing', new_job_listing_path(company_profile: @company_profile), class: 'btn btn-info btn-sm' %>
           <% end %>
         </div>
       </div>

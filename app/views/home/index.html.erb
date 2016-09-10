@@ -1,6 +1,19 @@
 <h1>Coder Factory Job Board</h1>
-<p>Find talented junior developers</p>
+<h4><strong>Find talented junior developers</strong></h4>
 
+<% if user_signed_in? %>
+  <% if current_user.student_profile %>
+      <p class="lead">Welcome back <%= current_user.student_profile.student_name %></p>
+  <% elsif current_user.company_profiles.any? %>
+      <p class="lead">Welcome back <%= current_user.company_profiles.first.contact_name %>
+  <% end %>
+  <% if current_user.has_role? :company_rep and !current_user.company_profiles.any? %>
+    <%= link_to 'Create your company profile', new_company_profile_path, class: 'btn btn-primary btn-sm' %>
+  <% end %>
+</p>
+<% else %>
 <%= link_to "<i class='fa fa-building'></i> List a job".html_safe, new_user_registration_path(user_type: 'company'), class: 'btn btn-primary btn-lg' %>
 
 <%= link_to "<i class='fa fa-user'></i> Get a job".html_safe, new_user_registration_path(user_type: 'student'), class: 'btn btn-success btn-lg' %>
+
+<% end %>
