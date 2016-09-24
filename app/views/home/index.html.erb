@@ -20,15 +20,21 @@
           <h4><%= job.title %>
             <p><small><%= job.company_profile.company_name %></small></p></h4>
             <p><%= job.job_description %></p>
+            <%= link_to 'Apply', new_job_application_path(job_listing: job), class: 'btn btn-primary btn-sm' %>
         </div>
       </div>
     </div>
 <% end %>
 </div>
 <% end %>
+<h3> Find companies near you</h3>
+<%= form_tag(search_company_profiles_path, method: :post) do %>
+  <%= label_tag :location %>
+  <%= text_field_tag :location %>
+  <%= submit_tag "Search" %>
+<% end %>
 <% else %>
 <%= link_to "<i class='fa fa-building'></i> List a job".html_safe, new_user_registration_path(user_type: 'company'), class: 'btn btn-primary btn-lg' %>
 
 <%= link_to "<i class='fa fa-user'></i> Get a job".html_safe, new_user_registration_path(user_type: 'student'), class: 'btn btn-success btn-lg' %>
-
 <% end %>

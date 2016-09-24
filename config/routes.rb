@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :job_applications
   resources :job_listings
   resources :student_profiles
   resources :skills do
@@ -7,7 +8,11 @@ Rails.application.routes.draw do
     end
   end
   resources :skill_catagories
-  resources :company_profiles
+  resources :company_profiles do
+    collection do
+      post 'search'
+    end
+  end
   devise_for :users, controllers: { registrations: "registrations" }
   root 'home#index'
 

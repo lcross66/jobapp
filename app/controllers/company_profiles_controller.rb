@@ -3,6 +3,10 @@ class CompanyProfilesController < ApplicationController
 
   # GET /company_profiles
   # GET /company_profiles.json
+  def search
+    @company_profiles = CompanyProfile.near(params[:location] + ", Australia")
+  end
+  
   def index
     @company_profiles = CompanyProfile.all
   end

@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :user_skills
   has_many :skills, through: :user_skills
   has_many :job_listings
+  has_many :job_applications
+  has_many :job_listings, through: :job_applications
 
   rolify :role_cname => 'Roles'
 

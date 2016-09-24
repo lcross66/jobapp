@@ -14,6 +14,7 @@ gem 'font-awesome-sass'
 gem 'rolify'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'geocoder'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

@@ -18,6 +18,7 @@
             <%= @company_profile.contact_name %></p>
           <p><strong>Address:</strong>
             <%= @company_profile.formatted_address %></p>
+             <div id="map"></div>
           <hr>
           <p><strong>Company Info:</strong>
             <%= @company_profile.description %></p>
@@ -31,79 +32,24 @@
       </div>
     </div>
   </div>
+<script>
+
+     function initMap() {
+       var myLatLng = {lat: <%= @company_profile.latitude %>, lng: <%= @company_profile.longitude %>};
+
+       var map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 15,
+         center: myLatLng
+       });
+
+       var marker = new google.maps.Marker({
+         position: myLatLng,
+         map: map,
+         title: '<%= @company_profile.company_name %>'
+       });
+     }
+   </script>
+   <script async defer
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCez8oL73WwKJVHsmR5py0hxC81DzPOfFo&callback=initMap">
+   </script>
   <%= link_to 'Back', company_profiles_path %>
-<!--
-<p>
-  <strong>First name:</strong>
-  <%= @company_profile.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @company_profile.last_name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @company_profile.phone %>
-</p>
-
-<p>
-  <strong>Company name:</strong>
-  <%= @company_profile.company_name %>
-</p>
-
-<p>
-  <strong>Logo:</strong>
-  <%= image_tag @company_profile.logo_url, width: '100px' %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @company_profile.description %>
-</p>
-
-<p>
-  <strong>Street:</strong>
-  <%= @company_profile.street %>
-</p>
-
-<p>
-  <strong>Suburb:</strong>
-  <%= @company_profile.suburb %>
-</p>
-
-<p>
-  <strong>Postcode:</strong>
-  <%= @company_profile.postcode %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @company_profile.country %>
-</p>
-
-<!-- <p>
-  <strong>Latitude:</strong>
-  <%= @company_profile.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @company_profile.longitude %>
-</p> -->
-
-<!-- <p>
-  <strong>Company culture:</strong>
-  <%= @company_profile.company_culture %>
-</p>
-
-<p>
-  <strong>Company type:</strong>
-  <%= @company_profile.company_type %>
-</p> -->
-
-<!-- <p>
-  <!-- <strong>User:</strong> -->
-  <!-- <%= @company_profile.user %> -->
-<!-- </p> -->
